@@ -1,0 +1,26 @@
+{
+  "name": "toddos-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run res:build && next build",
+    "start": "next start",
+    "res:build": "rescript",
+    "res:clean": "rescript clean",
+    "res:dev": "rescript build -w",
+    "favicon:generate": "npx cli-real-favicon@0.0.8 generate ./favicon/faviconDescription.json ./favicon/faviconData.json ./favicon/output",
+    "favicon:check": "npx cli-real-favicon@0.0.8 check-for-update --fail-on-update ./favicon/faviconData.json"
+  },
+  "dependencies": {
+    "@rescript/react": "^0.10.3",
+    "gentype": "^4.2.0",
+    "next": "^11.1.0",
+    "next-transpile-modules": "^8.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rescript": "^9.1.4",
+    "rescript-classnames": "^6.0.0"
+  },
+  "devDependencies": {}
+}

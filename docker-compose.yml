@@ -1,0 +1,23 @@
+version: '2.4'
+
+services:
+  frontend.dev:
+    build:
+      context: ./frontend
+      target: dependencies
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/workspace/frontend
+      - frontend_dev_node_modules:/workspace/frontend/node_modules:cached
+    command: npm run dev
+
+  frontend.prod:
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+
+# Volumes to avoid rebuilding dependencies every time you run your projects!
+volumes:
+  frontend_dev_node_modules:

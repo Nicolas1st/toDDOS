@@ -1,0 +1,21 @@
+{
+  "name": "toddos-frontend",
+  "namespace": false,
+  "reason": { "react-jsx": 3 },
+  "bs-dependencies": ["@rescript/react", "rescript-classnames"],
+  "ppx-flags": [],
+  "sources": [{ "dir": "src", "subdirs": true }],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "warnings": {
+    "number": "-3",
+    "error": "+101+8"
+  },
+  "gentypeconfig": {
+    "language": "untyped",
+    "shims": []
+  }
+}

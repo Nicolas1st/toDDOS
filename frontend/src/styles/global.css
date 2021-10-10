@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+}
+img {
+  color: inherit;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: inherit;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: inherit;
+  border: inherit;
+}
+a,
+button {
+  pointer-events: auto;
+  cursor: pointer;
+}
+:focus {
+  outline: 0 !important;
+}
