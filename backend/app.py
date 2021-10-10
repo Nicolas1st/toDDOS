@@ -12,13 +12,13 @@ with app.app_context():
 
 
 @app.route("/v1/user/<user_id>/tasks/", methods=["GET"])
-def get_tasks():
+def get_tasks(user_id):
     tasks = Task.query.all(user_id=user_id)
     return tasks
 
 
 @app.route("/v1/user/<user_id>/task/", methods=["POST"])
-def create_new_task(self, user_id):
+def create_new_task(user_id):
     content = request.form['content']
     task = Task(user_id=user_id, content=content)
     db.session.add(task)
@@ -27,7 +27,7 @@ def create_new_task(self, user_id):
 
 
 @app.route("/v1/user/<user_id>/task/<task_id>/", methods=["DELETE"])
-def delete_task(self, user_id, task_id):
+def delete_task(user_id, task_id):
     task = Task.query.filter_by(user_id=user_id, id=task_id).first()
     db.session.delete(task)
     db.session.commit()
@@ -35,9 +35,10 @@ def delete_task(self, user_id, task_id):
 
 
 @app.route("/v1/user/<user_id>/task/<task_id>/", methods=["PATCH"])
-def update_task(self, user_id, task_id):
+def update_task(user_id, task_id):
     task = Task.query.filter_by(user_id=user_id, id=task_id)
     task.in_progress = False
+    db.session.commit()
     return { "status": "success" }, 200
 
 
